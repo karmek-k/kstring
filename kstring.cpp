@@ -4,7 +4,7 @@ inline SizeType strlen(const char* str)
 {
     SizeType length = 0;
 
-    for (int i = 0; str[i] != '\0'; ++i)
+    for (SizeType i = 0; str[i] != '\0'; ++i)
         ++length;
 
     return length;
@@ -23,7 +23,7 @@ KString::KString(const char* str)
     sz = strlen(str) + 1;
     buffer = new char[sz];
 
-    for (int i = 0; i < sz; ++i)
+    for (SizeType i = 0; i < sz; ++i)
         buffer[i] = str[i];
 }
 
@@ -42,7 +42,7 @@ KString& KString::operator=(const KString& other)
     delete[] buffer;
     buffer = new char[sz];
 
-    for (int i = 0; i < sz; ++i)
+    for (SizeType i = 0; i < sz; ++i)
        buffer[i] = other.buffer[i];
 
     return *this;
