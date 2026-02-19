@@ -33,6 +33,26 @@ KString::~KString()
     buffer = nullptr;
 }
 
+KString& KString::operator=(const KString& other)
+{
+    if (this == &other)
+        return *this;
+
+    sz = other.sz;
+    delete[] buffer;
+    buffer = new char[sz];
+
+    for (int i = 0; i < sz; ++i)
+       buffer[i] = other.buffer[i];
+
+    return *this;
+}
+
+KString::KString(const KString& other)
+{
+    *this = other;
+}
+
 char KString::operator[](size_t index) const
 {
     if (index > size())
