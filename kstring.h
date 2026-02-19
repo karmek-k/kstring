@@ -4,6 +4,8 @@
 
 class KString
 {
+    std::size_t sz;
+    char* buffer;
 public:
     /**
      * Constructs an empty KString.
