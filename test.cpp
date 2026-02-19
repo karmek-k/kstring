@@ -1,5 +1,6 @@
 #include "kstring.h"
 #include <cassert>
+#include <utility>
 
 //
 // Write your own string class:
@@ -24,14 +25,34 @@
 int main()
 {
     {
+        // KString()
         KString str;
         assert(str.size() == 0);
     }
 
     {
+        // KString(const char*)
         KString str("abcde");
         assert(str.size() == 5);
         assert(str[0] == 'a');
         assert(str[4] == 'e');
+    }
+
+    {
+        KString str("abcde");
+
+        // KString(const KString&)
+        KString str_copy(str);
+        assert(str_copy.size() == 5);
+        assert(str[0] == str_copy[0]);
+    }
+
+    // TODO
+    {
+        KString str("abcde");
+
+        // KString(KString&&)
+        KString str_move(std::move(str));
+        assert(str_move.size() == 5);
     }
 }
