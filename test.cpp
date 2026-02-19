@@ -23,6 +23,15 @@
 
 int main()
 {
-    KString str;
-    assert(str.size() == 0);
+    {
+        KString str;
+        assert(str.size() == 0);
+    }
+
+    {
+        KString str("abcde");
+        assert(str.size() == 5);
+        assert(str[0] == 'a');
+        assert(str[4] == 'e');
+    }
 }
