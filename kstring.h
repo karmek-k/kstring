@@ -1,10 +1,13 @@
 #pragma once
 
-using size_t = unsigned long long;
+#include <iostream>
+
+// size_t is already defined in the iostream header
+using SizeType = unsigned long long;
 
 class KString
 {
-    size_t sz = 0;
+    SizeType sz = 0;
     char* buffer = nullptr;
 public:
     /**
@@ -26,10 +29,16 @@ public:
     /**
      * Returns the character at the specified index.
      */
-    char operator[](size_t index) const;
+    char operator[](SizeType index) const;
 
     /**
      * Returns the size of the KString, excluding the final null-byte.
      */
-    size_t size() const;
+    SizeType size() const;
 };
+
+/**
+ * Transfers all KString characters into the output stream,
+ * one after the other.
+ */
+std::ostream& operator<<(std::ostream& os, const KString& kstring);

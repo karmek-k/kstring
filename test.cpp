@@ -54,4 +54,10 @@ int main()
         KString str_move(std::move(str));
         assert(str_move.size() == 5);
     }
+
+    {
+        // operator<<
+        KString str("aaaAAAbbb");
+        std::cout << str << "\n";
+    }
 }

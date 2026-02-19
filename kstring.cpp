@@ -1,8 +1,8 @@
 #include "kstring.h"
 
-inline size_t strlen(const char* str)
+inline SizeType strlen(const char* str)
 {
-    size_t length = 0;
+    SizeType length = 0;
 
     for (int i = 0; str[i] != '\0'; ++i)
         ++length;
@@ -75,7 +75,7 @@ KString::KString(KString&& other)
     other.buffer = nullptr;
 }
 
-char KString::operator[](size_t index) const
+char KString::operator[](SizeType index) const
 {
     if (index > size())
         throw "index out of range";
@@ -83,7 +83,15 @@ char KString::operator[](size_t index) const
     return buffer[index];
 }
 
-size_t KString::size() const
+SizeType KString::size() const
 {
     return sz - 1;
+}
+
+std::ostream& operator<<(std::ostream& os, const KString& kstring)
+{
+    for (SizeType i = 0; i < kstring.size(); ++i)
+        os << kstring[i];
+
+    return os;
 }

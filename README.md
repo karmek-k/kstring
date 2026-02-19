@@ -13,3 +13,4 @@ String implementation according to the Samsung R&amp;D Institute Poland C++ Tech
   * implemented (`operator[]`)
 * The class should have an operator method that allows adding additional characters to the string.
 * Stream operators should be defined that allow objects to be output to the screen or to a file.
+  * implemented (`operator<<`) - although it uses `std::ostream`...
