@@ -4,13 +4,13 @@ using size_t = unsigned long long;
 
 class KString
 {
-    size_t sz;
-    char* buffer;
+    size_t sz = 0;
+    char* buffer = nullptr;
 public:
     /**
      * Constructs an empty KString.
      */
-    KString() = default;
+    KString();
 
     /**
      * Constructs a KString from an array of chars.

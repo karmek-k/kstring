@@ -10,6 +10,11 @@ inline size_t strlen(const char* str)
     return length;
 }
 
+KString::KString()
+    : KString("")
+{
+}
+
 KString::KString(const char* str)
 {
     if (str == nullptr)
@@ -26,6 +31,14 @@ KString::~KString()
 {
     delete[] buffer;
     buffer = nullptr;
+}
+
+char KString::operator[](size_t index) const
+{
+    if (index > size())
+        throw "index out of range";
+
+    return buffer[index];
 }
 
 size_t KString::size() const
