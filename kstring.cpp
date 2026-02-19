@@ -7,9 +7,12 @@ KString::KString(const char* str)
 
     sz = sizeof(str) / sizeof(char);
     buffer = new char[sz];
+
+    for (int i = 0; i < sz; ++i)
+        buffer[i] = str[i];
 }
 
-std::size_t KString::size() const
+size_t KString::size() const
 {
     return sz - 1;  // excluding the null-byte
 }

@@ -1,10 +1,10 @@
 #pragma once
 
-#include <cstddef>
+using size_t = unsigned long long;
 
 class KString
 {
-    std::size_t sz;
+    size_t sz;
     char* buffer;
 public:
     /**
@@ -20,10 +20,10 @@ public:
     /**
      * Returns the character at the specified index.
      */
-    char operator[](std::size_t index) const;
+    char operator[](size_t index) const;
 
     /**
      * Returns the size of the KString.
      */
-    std::size_t size() const;
+    size_t size() const;
 };
