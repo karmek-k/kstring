@@ -33,6 +33,7 @@
 *.lib
 
 # Executables
+kstring-test
 *.exe
 *.out
 *.app
