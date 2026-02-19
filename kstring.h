@@ -17,13 +17,15 @@ public:
      */
     KString(const char* str);
 
+    ~KString();
+
     /**
      * Returns the character at the specified index.
      */
     char operator[](size_t index) const;
 
     /**
-     * Returns the size of the KString.
+     * Returns the size of the KString, excluding the final null-byte.
      */
     size_t size() const;
 };
