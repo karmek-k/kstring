@@ -47,7 +47,6 @@ int main()
         assert(str[0] == str_copy[0]);
     }
 
-    // TODO
     {
         KString str("abcde");
 
