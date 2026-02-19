@@ -18,6 +18,10 @@ public:
     KString(const char* str);
 
     ~KString();
+    KString(const KString& other);
+    KString& operator=(const KString& other);
+    KString(KString&& other);
+    KString& operator=(KString&& other);
 
     /**
      * Returns the character at the specified index.
