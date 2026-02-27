@@ -72,4 +72,23 @@ int main()
 
         std::cout << str << "\n";
     }
+
+    {
+        // operator+= empty string
+        KString str;
+        assert(str.size() == 0);
+
+        str += 'b';
+        assert(str.size() == 1);
+        assert(str[0] == 'b');
+    }
+
+    {
+        // operator[]
+        KString str("aa");
+        assert(str[1] == 'a');
+
+        str[1] = 'b';
+        assert(str[1] == 'b');
+    }
 }

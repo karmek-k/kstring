@@ -30,6 +30,7 @@ public:
      * Returns the character at the specified index.
      */
     char operator[](SizeType index) const;
+    char& operator[](SizeType index);
 
     /**
      * Returns the size of the KString, excluding the final null-byte.
