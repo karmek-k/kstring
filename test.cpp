@@ -60,4 +60,16 @@ int main()
         KString str("aaaAAAbbb");
         std::cout << str << "\n";
     }
+
+    {
+        // operator+=
+        KString str("aa");
+        assert(str.size() == 2);
+
+        str += 'b';
+        assert(str.size() == 3);
+        assert(str[2] == 'b');
+
+        std::cout << str << "\n";
+    }
 }

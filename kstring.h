@@ -35,6 +35,11 @@ public:
      * Returns the size of the KString, excluding the final null-byte.
      */
     SizeType size() const;
+
+    /**
+     * Appends a character to the end of the KString.
+     */
+    KString& operator+=(char c);
 };
 
 /**

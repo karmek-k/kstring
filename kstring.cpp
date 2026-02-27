@@ -88,6 +88,22 @@ SizeType KString::size() const
     return sz - 1;
 }
 
+KString& KString::operator+=(char c)
+{
+    char* new_buffer = new char[sz + 1];
+
+    for (SizeType i = 0; i < sz; ++i)
+       new_buffer[i] = buffer[i];
+
+    new_buffer[sz - 1] = c;
+    new_buffer[sz] = '\0';
+    delete[] buffer;
+    sz++;
+    buffer = new_buffer;
+
+    return *this;
+}
+
 std::ostream& operator<<(std::ostream& os, const KString& kstring)
 {
     for (SizeType i = 0; i < kstring.size(); ++i)
