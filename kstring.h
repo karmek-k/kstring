@@ -5,6 +5,14 @@
 // size_t is already defined in the iostream header
 using SizeType = unsigned long long;
 
+struct InvalidStringException
+{
+};
+
+struct IndexOutOfRangeException
+{
+};
+
 class KString
 {
     SizeType sz = 0;
@@ -41,10 +49,9 @@ public:
      * Appends a character to the end of the KString.
      */
     KString& operator+=(char c);
-};
 
-/**
- * Transfers all KString characters into the output stream,
- * one after the other.
- */
-std::ostream& operator<<(std::ostream& os, const KString& kstring);
+    /**
+     * Transfers all KString characters into the output stream.
+     */
+    friend std::ostream& operator<<(std::ostream& os, const KString& kstring);
+};
