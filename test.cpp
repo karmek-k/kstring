@@ -54,4 +54,41 @@ int main()
         KString str_move(std::move(str));
         assert(str_move.size() == 5);
     }
+
+    {
+        // operator<<
+        KString str("aaaAAAbbb");
+        std::cout << str << "\n";
+    }
+
+    {
+        // operator+=
+        KString str("aa");
+        assert(str.size() == 2);
+
+        str += 'b';
+        assert(str.size() == 3);
+        assert(str[2] == 'b');
+
+        std::cout << str << "\n";
+    }
+
+    {
+        // operator+= empty string
+        KString str;
+        assert(str.size() == 0);
+
+        str += 'b';
+        assert(str.size() == 1);
+        assert(str[0] == 'b');
+    }
+
+    {
+        // operator[]
+        KString str("aa");
+        assert(str[1] == 'a');
+
+        str[1] = 'b';
+        assert(str[1] == 'b');
+    }
 }
